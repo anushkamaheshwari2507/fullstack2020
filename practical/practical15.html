@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT COUNTER</title>
+    <style>
+         *{
+            margin: 0px; 
+            padding: 0px;
+        }
+        body{
+            background-color: gray;
+        }
+        #container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body h1{
+            margin:50px;
+            text-align: center;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        body p{
+            color: yellow;
+            font-size: 40px;
+            float: left;
+            display: block;
+            margin:  auto 50px;
+        }
+         button{
+            width:60px;
+            height: 50px;
+            font-size: 40px;
+            background-color: yellow;
+            float: left;
+            display: block;
+            margin:  auto 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1>COUNTER</h1>
+    <div id="container">
+        <button id="btn1" onclick="displaycount1()" disabled="disabled">-</button>
+        <p id="counting">0</p>
+        <button id="btn" onclick="displaycount2()" >+</button>
+    </div>
+    <script>
+        function displaycount1(){
+            var subtract=document.getElementById("counting").innerHTML;
+           if (subtract>1)
+            {          subtract--;
+
+                document.getElementById("counting").innerHTML=subtract;
+            }
+            else 
+            {
+                btn1.setAttribute('disabled',false);
+                document.getElementById("counting").innerHTML=0;
+            }
+        }
+        function displaycount2(){
+            var addition=document.getElementById("counting").innerHTML;
+            addition++;
+            btn1.removeAttribute('disabled');
+
+            document.getElementById("counting").innerHTML=addition;
+        }
+    </script>
+</body>
+</html>
